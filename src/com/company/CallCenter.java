@@ -13,6 +13,7 @@ public class CallCenter {
 
     public CallCenter() {
         cola = 0;
+        clientesCola = -1;
         estadoAgentes = false;
         tiempoReloj = 0;
         agentesDisp = 0;
