@@ -12,7 +12,7 @@ public class CallCenter {
     PriorityQueue<Evento> colaPriori = new PriorityQueue<Evento>();
 
     public CallCenter() {
-
+        cola = 0;
         estadoAgentes = false;
         tiempoReloj = 0;
         agentesDisp = 0;
