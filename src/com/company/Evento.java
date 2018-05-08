@@ -4,12 +4,14 @@ import java.util.Comparator;
 
 public class Evento implements Comparable<Evento>{
 
-    private int tiempo = 0;
-    private int idHangIn;
-    private int idHangOut;
+    private int tiempo;
+    private boolean idEvento;
 
-    public Evento() {
-        this.idHangIn = this.idHangOut = 0;
+    public Evento(int t, boolean estado) {
+
+        tiempo = t;
+        idEvento = estado;
+
     }
 
     public int getTiempo() {
@@ -20,20 +22,12 @@ public class Evento implements Comparable<Evento>{
         this.tiempo = tiempo;
     }
 
-    public void setIdHangIn(int idHangIn) {
-        this.idHangIn = idHangIn;
+    public boolean isIdEvento() {
+        return idEvento;
     }
 
-    public void setIdHangOut(int idHangOut) {
-        this.idHangOut = idHangOut;
-    }
-
-    public int getIdHangIn() {
-        return this.idHangIn;
-    }
-
-    public int getIdHangOut() {
-        return this.idHangOut;
+    public void setIdEvento(boolean idEvento) {
+        this.idEvento = idEvento;
     }
 
     @Override

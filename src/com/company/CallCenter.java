@@ -9,11 +9,13 @@ public class CallCenter {
     private int clientesCola;
     private boolean estadoAgentes;
     private int tiempoReloj;
-    List<Evento> kistaDeEventos = new ArrayList();
     PriorityQueue<Evento> colaPriori = new PriorityQueue<Evento>();
 
     public CallCenter() {
-        agentesDisp = 1;
+        cola = 0;
+        estadoAgentes = false;
+        tiempoReloj = 0;
+        agentesDisp = 0;
     }
 
     private void hangIn() {
@@ -38,6 +40,25 @@ public class CallCenter {
     }
 
     private void generarHangIn() {
+
+        int minuto = 0;
+        float numAleatorio = obtenerNumRandom();
+
+        if (numAleatorio <= 0.40){
+
+            minuto = 1;
+        }else{
+
+            if (numAleatorio <= 0.75){
+
+                minuto = 2;
+            }else{
+
+                minuto = 3;
+            }
+        }
+
+        colaPriori.add(new Evento(tiempoReloj + minuto, true));
     }
 
     private void generarHangOut() {
@@ -47,5 +68,13 @@ public class CallCenter {
 
         return colaPriori.poll();
 
+    }
+
+    private float obtenerNumRandom(){
+
+        float out = 0;
+        Random ran = new Random();
+        out = ran.nextFloat();
+        return out;
     }
 }
