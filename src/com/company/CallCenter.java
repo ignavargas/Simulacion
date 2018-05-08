@@ -13,7 +13,7 @@ public class CallCenter {
     PriorityQueue<Evento> colaPriori = new PriorityQueue<Evento>();
 
     public CallCenter() {
-        cola = 0;
+        agentesDisp = 1;
     }
 
     private void hangIn() {
