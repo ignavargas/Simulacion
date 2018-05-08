@@ -22,7 +22,7 @@ public class Evento implements Comparable<Evento>{
         this.tiempo = tiempo;
     }
 
-    public boolean isIdEvento() {
+    public boolean getIdEvento() {
         return idEvento;
     }
 

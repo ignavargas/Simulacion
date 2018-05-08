@@ -6,6 +6,12 @@ public class Main {
 	// write your code here
 
         CallCenter cc = new CallCenter();
-        cc.obtenerSigEvento();
+        int i = 0;
+        while(i < 100){
+            cc.procesarEvento(cc.obtenerSigEvento());
+            cc.compareTime();
+            i++;
+        }
+
     }
 }
