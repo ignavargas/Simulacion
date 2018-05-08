@@ -6,15 +6,13 @@ public class CallCenter {
 
     private int agentesDisp;
     private int cola;
-    private int clientesCola;
-    private boolean estadoAgentes;
+    private int clientesDisp;
     private int tiempoReloj;
     PriorityQueue<Evento> colaPriori = new PriorityQueue<Evento>();
 
     public CallCenter() {
         cola = 0;
-        clientesCola = -1;
-        estadoAgentes = false;
+        clientesDisp = 0;
         tiempoReloj = 0;
         agentesDisp = 0;
     }
@@ -37,6 +35,7 @@ public class CallCenter {
         } else {
             agentesDisp++;
         }
+        clientesDisp++;
 
     }
 
@@ -63,6 +62,38 @@ public class CallCenter {
     }
 
     private void generarHangOut() {
+        int minutoB = 0;
+
+        float numAleatorioB = obtenerNumRandom();
+
+        if (numAleatorioB <= 0.10){
+
+            minutoB = 2;
+        }else {
+
+            if (numAleatorioB <= 0.35){
+
+                minutoB = 3;
+            }else {
+
+                if (numAleatorioB <= 0.75){
+
+                    minutoB = 4;
+                }else {
+
+                    if (numAleatorioB <= 0.95){
+
+                        minutoB = 7;
+                    }else {
+
+                        minutoB = 10;
+                    }
+                }
+            }
+        }
+
+
+        colaPriori.add(new Evento(tiempoReloj + minutoB, false));
     }
 
     public Evento obtenerSigEvento(){
