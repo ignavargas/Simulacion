@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8415b90b-26db-460a-9f3c-20565d04350f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Cliente.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Vista.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/production/Simulacion/com/company/CallCenter.class" afterPath="$PROJECT_DIR$/out/production/Simulacion/com/company/CallCenter.class" />
       <change beforePath="$PROJECT_DIR$/out/production/Simulacion/com/company/Main.class" afterPath="$PROJECT_DIR$/out/production/Simulacion/com/company/Main.class" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/CallCenter.java" afterPath="$PROJECT_DIR$/src/com/company/CallCenter.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" afterPath="$PROJECT_DIR$/src/com/company/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -329,12 +325,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525808779986</updated>
-      <workItem from="1525808781515" duration="11765000" />
+      <workItem from="1525808781515" duration="11829000" />
     </task>
+    <task id="LOCAL-00001" summary="Final de Ale">
+      <created>1525824958000</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1525824958000</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11765000" />
+    <option name="totallyTimeSpent" value="11829000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -373,6 +377,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Final de Ale" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final de Ale" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
