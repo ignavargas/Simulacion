@@ -10,9 +10,12 @@ public class CallCenter {
     private int tiempoReloj;
     PriorityQueue<Evento> colaPriori = new PriorityQueue<Evento>();
     List<Evento> listaEventos = new LinkedList<>();
+    Queue<Cliente> colaClientes = new LinkedList<>();
+    List<Cliente> conjuntoClientes = new LinkedList<>();
+    private int idCliente = 1;
 
     public CallCenter() {
-        cola = 0;
+        setCola(0);
         clientesAtend = 0;
         tiempoReloj = 0;
         agentesDisp = 2;
@@ -20,21 +23,28 @@ public class CallCenter {
         colaPriori.add(new Evento(0,true));
     }
 
+
     private void hangIn() {
         if (this.agentesDisp == 0) {
-            cola++;
+            setCola(getCola() + 1);
+            colaClientes.add(new Cliente(idCliente,tiempoReloj,0,0));
         } else {
             agentesDisp--;
-            this.generarHangOut();
-        }
+            int ts = this.generarHangOut();
+            conjuntoClientes.add(new Cliente(idCliente,tiempoReloj,tiempoReloj,ts));
 
+        }
+        idCliente++;
         this.generarHangIn();
     }
 
     private void hangOut() {
-        if (this.cola > 0) {
-            cola--;
-            generarHangOut();
+        if (this.getCola() > 0) {
+            setCola(getCola() - 1);
+            Cliente c = colaClientes.poll();
+            int ts = generarHangOut();
+            conjuntoClientes.add(new Cliente(c.getIdCliente(),c.getTiempoArribo(),tiempoReloj,ts));
+
         } else {
             agentesDisp++;
         }
@@ -65,7 +75,7 @@ public class CallCenter {
         listaEventos.add(new Evento(tiempoReloj+minuto,true));
     }
 
-    private void generarHangOut() {
+    private int generarHangOut() {
         int minutoB = 0;
 
         float numAleatorioB = obtenerNumRandom();
@@ -99,11 +109,13 @@ public class CallCenter {
 
         colaPriori.add(new Evento(tiempoReloj + minutoB, false));
         listaEventos.add(new Evento(tiempoReloj+minutoB,false));
+
+        return minutoB;
     }
 
     public Evento obtenerSigEvento(){
 
-        System.out.println(colaPriori.peek().getTiempo() + "  " + cola);
+
         return colaPriori.poll();
 
     }
@@ -130,5 +142,29 @@ public class CallCenter {
         Random ran = new Random();
         out = ran.nextFloat();
         return out;
+    }
+
+    public List<Evento> sendListEvent(){
+        return listaEventos;
+    }
+
+    public List<Cliente> sendListClient(){
+        return conjuntoClientes;
+    }
+
+    public void limpiar(){
+        listaEventos.clear();
+        conjuntoClientes.clear();
+        colaClientes.clear();
+        colaPriori.clear();
+    }
+
+
+    public int getCola() {
+        return cola;
+    }
+
+    public void setCola(int cola) {
+        this.cola = cola;
     }
 }
