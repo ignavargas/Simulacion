@@ -37,10 +37,10 @@ public class Main {
                 v.cantClientes();
                 cant = scanner.nextInt();
                 clientes = 1;
-                while(clientes<cant){
+                while(cc.getClientesAtend() < cant){
                     cc.procesarEvento(cc.obtenerSigEvento());
                     cc.compareTime();
-                    clientes++;
+
                 }
                 v.finSim();
 

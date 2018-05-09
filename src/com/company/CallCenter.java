@@ -16,7 +16,7 @@ public class CallCenter {
 
     public CallCenter() {
         setCola(0);
-        clientesAtend = 0;
+        setClientesAtend(0);
         tiempoReloj = 0;
         agentesDisp = 2;
         listaEventos.add(new Evento(0,true));
@@ -32,6 +32,7 @@ public class CallCenter {
             agentesDisp--;
             int ts = this.generarHangOut();
             conjuntoClientes.add(new Cliente(idCliente,tiempoReloj,tiempoReloj,ts));
+            setClientesAtend(getClientesAtend()+1);
 
         }
         idCliente++;
@@ -48,7 +49,7 @@ public class CallCenter {
         } else {
             agentesDisp++;
         }
-        clientesAtend++;
+        setClientesAtend(getClientesAtend() + 1);
 
     }
 
@@ -166,5 +167,13 @@ public class CallCenter {
 
     public void setCola(int cola) {
         this.cola = cola;
+    }
+
+    public int getClientesAtend() {
+        return clientesAtend;
+    }
+
+    public void setClientesAtend(int clientesAtend) {
+        this.clientesAtend = clientesAtend;
     }
 }
